@@ -58,9 +58,9 @@ namespace FolderFolderFileUpper
             Console.WriteLine("Sub directories = \n");
             foreach (string s in subdirect) Console.WriteLine(s);
 
-            if (subdirect.Length == 1)
+            if (subdirect.Length == 1 && Directory.GetFiles(d).Length == 0 ) // only one subdirectory and no other files in parent directory
             {
-                if (d.Substring(d.LastIndexOf(@"\")) == subdirect[0].Substring(subdirect[0].LastIndexOf(@"\")))
+                if (d.Substring(d.LastIndexOf(@"\")) == subdirect[0].Substring(subdirect[0].LastIndexOf(@"\"))) // match parent and subdirectory name
                 {
                     Console.WriteLine("The directory fullfills fffu conditions\n");
                     Console.WriteLine("Moving files:");
